@@ -1,0 +1,59 @@
+body{
+    
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTymTgQlj4_2FtIVpudFlkMiDmocTJCTK6yjk4E6-tvJ6L0JCVO");
+    max-width: width 960px; ;
+}
+    
+
+h1 {
+    color: rgb(136, 4, 4);
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 3px;
+   
+    text-align: center;
+    max-width: width 960px; 
+}
+.winsText{
+    color: aqua
+}
+.crystal-image{
+    width: 200px;
+    height:200px;
+  margin-left: 345px;
+  
+}
+.freedom{ background-color: bisque;
+    height: 60px;
+    width: 400px;
+   margin:auto;
+   width:50%;
+   letter-spacing: 3px;
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(136, 4, 4);
+    text-align: center;
+
+
+}
+.jail{ background-color: bisque;
+    height: 60px;
+    width: 400px;
+    margin:auto;
+    width:50%;
+    letter-spacing: 3px;
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(136, 4, 4);
+    text-align: center;
+
+}
+.moneyCollected{
+    background-color: bisque;
+    height: 60px;
+    width: 400px;
+    margin:auto;
+   width:50%;
+   letter-spacing: 3px;
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(136, 4, 4);
+    text-align: center;
+    
+}

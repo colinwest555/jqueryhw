@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>simple crystal game</title>
+
+    <link rel="stylesheet" type="text/css" href="jqstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>TOTAL BAIL: $ <span id="number-to-guess"></span></h1>
+    <div class="freedom">
+        <p> <span id="wins-text"></span></p>
+    </div>
+    <div class="jail">
+        <p id="losses-text"></p>
+    </div>
+    <div class="moneyCollected">
+        <p id="counter-text"></p>
+    </div>
+    <div id="crystals">
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        var targetNumber = Math.floor((Math.random() * 50) + 50);
+        var counter = 0;
+        var losses = 0;
+        var wins = 0;
+        $("#number-to-guess").text(targetNumber);
+        $("#wins-text").text("BONDS MET: " + wins);
+        $("#losses-text").text("CONVICTIONS: " + losses);
+        $("#counter-text").text("MONEY COLLECTED: " + "$" + counter);
+
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var counterText = document.getElementById("counter-text");
+
+
+        var numberOptions = [ Math.floor((Math.random() * 10) + 3), 1,  Math.floor((Math.random() * 5) + 5), Math.floor((Math.random() * 5) + 5)];
+
+
+        for (var i = 0; i < numberOptions.length; i++) {
+
+
+            var imageCrystal = $("<img>");
+
+
+            imageCrystal.addClass("crystal-image");
+
+
+            imageCrystal.attr("src", "money.png");
+
+
+            imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+
+
+            $("#crystals").append(imageCrystal);
+        }
+
+
+        $(".crystal-image").on("click", function () {
+
+
+
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            crystalValue = parseInt(crystalValue);
+           
+
+            counter += crystalValue;
+
+
+
+
+
+            if (counter == targetNumber) {
+                wins++ , counter = 0, targetNumber = Math.floor((Math.random() * 50) + 50);
+            }
+
+            else if (counter >= targetNumber) {
+                losses++ , counter = 0, targetNumber = Math.floor((Math.random() * 50) + 50);
+            }
+            
+            console.log(counter)
+            winsText.textContent = "BONDS MET: " + wins;
+            lossesText.textContent = "CONVICTIONS: " + losses;
+            counterText.textContent = "MONEY COLLECTED: " + "$" + counter;
+            $("#number-to-guess").text(targetNumber);
+
+            $("#wins-text").text("BONDS MET: " + wins);
+            $("#losses-text").text("CONVICTIONS: " + losses);
+            $("#counter-text").text("MONEY COLLECTED: " + "$" + counter);
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
