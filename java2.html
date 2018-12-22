@@ -42,7 +42,7 @@
         var counterText = document.getElementById("counter-text");
 
 
-        var numberOptions = [ Math.floor((Math.random() * 10) + 3), 1,  Math.floor((Math.random() * 5) + 5), Math.floor((Math.random() * 5) + 5)];
+        var numberOptions = [Math.floor((Math.random() * 10) + 3), 1, Math.floor((Math.random() * 5) + 5), Math.floor((Math.random() * 5) + 5)];
 
 
         for (var i = 0; i < numberOptions.length; i++) {
@@ -70,7 +70,7 @@
 
             var crystalValue = ($(this).attr("data-crystalvalue"));
             crystalValue = parseInt(crystalValue);
-           
+
 
             counter += crystalValue;
 
@@ -85,7 +85,7 @@
             else if (counter >= targetNumber) {
                 losses++ , counter = 0, targetNumber = Math.floor((Math.random() * 50) + 50);
             }
-            
+
             console.log(counter)
             winsText.textContent = "BONDS MET: " + wins;
             lossesText.textContent = "CONVICTIONS: " + losses;
